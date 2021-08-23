@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.UserFDao">
+    <insert id="insert" parameterType="User">
+        insert into user values (#{username},#{password})
+    </insert>
+    <select id="selectOne" resultType="User">
+        select username,password from user where username = #{k}
+    </select>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.StudentFDao">
+    <insert id="insert" parameterType="Student">
+        insert into student values (#{id},#{name},#{sex},#{birthday})
+    </insert>
+    <delete id="delete" parameterType="String">
+        delete from student where id = #{id}
+    </delete>
+    <update id="update" parameterType="Student">
+        update student set name = #{name},sex = #{sex},birthday = #{birthday} where id = #{id}
+    </update>
+    <select id="selectAll" resultType="Student">
+        select id,name,sex,birthday from student
+    </select>
+    <select id="selectOne" parameterType="String" resultType="Student">
+        select id,name,sex,birthday from student where id = #{id}
+    </select>
+</mapper>
